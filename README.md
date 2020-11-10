@@ -46,8 +46,7 @@ Include the following at the top of your index.scss file:
 `@import '@Milliman-InnerSource/milliman-design-system/themes/scss/white/index.scss';`
 
 ### Fonts
-Our design system uses two fonts, depending on the use. For code blocks, we use JetBrains Mono. For everything else, we use Open Sans, hosted by Google Fonts. To properly render the Open Sans font, please include the following in your root html file:
-`<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">`
+Our design system uses two fonts, depending on the use. For code blocks, we use JetBrains Mono. For everything else, we use Open Sans. To use the fonts in your project, please reference the font files located the fonts folder. 
 
 ## How To Contribute
 
