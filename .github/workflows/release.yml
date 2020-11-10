@@ -43,7 +43,7 @@ jobs:
           zip -r themes.zip themes -x '*scss*'
       - name: Get Carbon Components Version  
         run: |
-          echo $(npm view carbon-components version) >> $carbon_components_version
+          echo "carbon_components_version=$(npm view carbon-components version)" >> $GITHUB_ENV
 
   
       - name: Create Release
