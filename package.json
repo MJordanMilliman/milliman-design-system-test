@@ -13,6 +13,7 @@
     "minify-css": "csso themes/css/white/index.css --output themes/css/white/index.min.css --input-source-map themes/css/white/index.css.map --source-map themes/css/white/index.min.map"
   },
   "dependencies": {
+	"@carbon/themes": "^10.29.0",
     "carbon-components": "^10.20.0",
     "node-sass": "^4.14.1"
   },
