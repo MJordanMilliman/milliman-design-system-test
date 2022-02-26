@@ -5,19 +5,22 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
-    "build": "npm run compile-sass && npm run minify-css",
+    "build": "npm run compile-sass && npm run postcss && npm run minify-css",
     "compile-sass": "node-sass themes/scss --output themes/css --include-path node_modules/ --source-map true",
+	"postcss": "postcss themes/css/white/index.css -r --verbose"
     "minify-css": "csso themes/css/white/index.css --output themes/css/white/index.min.css --input-source-map themes/css/white/index.css.map --source-map themes/css/white/index.min.map"
   },
   "dependencies": {
-	"@carbon/themes": "^10.29.0",
+    "@carbon/themes": "^10.29.0",
     "carbon-components": "^10.20.0",
     "node-sass": "^4.14.1"
   },
   "devDependencies": {
-    "csso-cli": "^3.0.0"
+    "csso-cli": "^3.0.0",
+    "postcss": "^8.4.7",
+    "postcss-cli": "^9.1.0"
   }
 }
