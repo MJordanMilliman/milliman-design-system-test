@@ -10,11 +10,12 @@
   "scripts": {
     "build": "npm run compile-sass && npm run postcss && npm run minify-css",
     "compile-sass": "node-sass themes/scss --output themes/css --include-path node_modules/ --source-map true",
-	"postcss": "postcss themes/css/white/index.css -r --verbose",
+    "postcss": "postcss themes/css/white/index.css -r --use autoprefixer --verbose",
     "minify-css": "csso themes/css/white/index.css --output themes/css/white/index.min.css --input-source-map themes/css/white/index.css.map --source-map themes/css/white/index.min.map"
   },
   "dependencies": {
     "@carbon/themes": "^10.29.0",
+    "autoprefixer": "^10.4.2",
     "carbon-components": "^10.20.0",
     "node-sass": "^4.14.1"
   },
