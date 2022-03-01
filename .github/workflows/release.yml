@@ -55,7 +55,7 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
           draft: false
-          prerelease: ${{contains('rc', github.ref)}}
+          prerelease: ${{contains(github.ref, 'rc')}}
 
       - name: Upload Release Asset
         id: upload-release-asset
