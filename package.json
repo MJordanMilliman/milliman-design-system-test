@@ -15,14 +15,13 @@
   },
   "dependencies": {
     "@carbon/themes": "^10.29.0",
-    "carbon-components": "^10.20.0",
-   
+    "carbon-components": "^10.20.0"
   },
   "devDependencies": {
     "csso-cli": "^3.0.0",
     "postcss": "^8.4.7",
     "postcss-cli": "^9.1.0",
 	"dart-sass": "^1.25.0",
-	"autoprefixer": "^10.4.2",
+	"autoprefixer": "^10.4.2"
   }
 }
