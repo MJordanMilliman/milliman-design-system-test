@@ -27,7 +27,7 @@ jobs:
         run: git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com" && git config --global user.name "$GITHUB_ACTOR" 
 
       - name: Npm Version
-        run: npm --no-git-tag-version version from-git
+        run: npm version from-git
 
       - name: Install Dependencies 
         run: npm install
@@ -81,13 +81,18 @@ jobs:
       - run: git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com" && git config --global user.name "$GITHUB_ACTOR"    
       - name: Set Prelease Version
         if: ${{contains(github.ref, 'rc')}}
-        run: npm --no-git-tag-version version --preid=rc from-git 
+        run: npm version from-git preid="rc"
       - name: Set Version
         if: ${{!contains(github.ref, 'rc')}}
         run: npm --no-git-tag-version version from-git
       - run: npm install
       - run: npm run build  
       - run: cp -R node_modules/carbon-components/scripts themes/js
-      - run: npm publish
+      - name: Publish Pre-release Package
+        if: ${{contains(github.ref, 'rc')}}
+        run: npm publish --tag next
+      - name: Publish Release Package
+        if: ${{!contains(github.ref, 'rc')}}
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
