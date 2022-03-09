@@ -3,6 +3,8 @@
 
 $carbon--theme: $milliman--theme--white;
 
+$shell-header-bg-01: #39414D
+
 @import "carbon-components/scss/globals/scss/styles.scss";
 
 @include carbon--theme();
