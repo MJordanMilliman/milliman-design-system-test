@@ -27,7 +27,7 @@ jobs:
         run: git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com" && git config --global user.name "$GITHUB_ACTOR" 
 
       - name: Npm Version
-        run: npm version from-git
+        run: run: npm version ${{ github.ref }}
 
       - name: Install Dependencies 
         run: npm install
@@ -78,13 +78,9 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@MJordanMilliman' 
       - run: git fetch --tags -f
-      - run: git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com" && git config --global user.name "$GITHUB_ACTOR"    
-      - name: Set Prelease Version
-        if: ${{contains(github.ref, 'rc')}}
-        run: npm version from-git preid="rc"
+      - run: git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com" && git config --global user.name "$GITHUB_ACTOR"
       - name: Set Version
-        if: ${{!contains(github.ref, 'rc')}}
-        run: npm --no-git-tag-version version from-git
+        run: npm version ${{ github.ref }}
       - run: npm install
       - run: npm run build  
       - run: cp -R node_modules/carbon-components/scripts themes/js
