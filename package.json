@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "npm run compile-sass && npm run postcss && npm run minify-css",
-    "compile-sass": "dart-sass themes/scss:themes/css --load-path node_modules/",
+    "compile-sass": "sass themes/scss:themes/css --load-path node_modules/",
     "postcss": "postcss themes/css/white/index.css -r --use autoprefixer --map",
     "minify-css": "csso themes/css/white/index.css --output themes/css/white/index.min.css --input-source-map themes/css/white/index.css.map --source-map themes/css/white/index.min.map"
   },
@@ -21,7 +21,7 @@
     "csso-cli": "^3.0.0",
     "postcss": "^8.4.7",
     "postcss-cli": "^9.1.0",
-	"dart-sass": "^1.25.0",
+	"sass": "^1.25.0",
 	"autoprefixer": "^10.4.2"
   }
 }
