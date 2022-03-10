@@ -86,7 +86,7 @@ jobs:
       - run: cp -R node_modules/carbon-components/scripts themes/js
       - name: Publish Pre-release Package
         if: ${{contains(github.ref_name, 'rc')}}
-        run: npm publish --tag next
+        run: npm publish --tag=next
       - name: Publish Release Package
         if: ${{!contains(github.ref_name, 'rc')}}
         run: npm publish
