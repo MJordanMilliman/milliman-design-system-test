@@ -87,6 +87,8 @@ jobs:
       - name: Publish Pre-release Package
         if: ${{contains(github.ref_name, 'rc')}}
         run: npm publish --tag=next
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - name: Publish Release Package
         if: ${{!contains(github.ref_name, 'rc')}}
         run: npm publish
