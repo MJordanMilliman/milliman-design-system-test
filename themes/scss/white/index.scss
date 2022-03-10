@@ -4,8 +4,10 @@
 
 $carbon--theme: $milliman--theme--white;
 
+.bx--header { background-color: #39414D !important; }
+.bx--header__action--active { border-bottom: 1px solid #39414D !important; }
+.bx--skip-to-content:focus { background-color: #39414D !important; }
+
 @include carbon--theme();
 
 @import "carbon-components/scss/globals/scss/styles.scss";
-
-$shell-header-bg-01: #39414D;
